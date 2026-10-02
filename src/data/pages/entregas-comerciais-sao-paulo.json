@@ -1,0 +1,25 @@
+{
+  "title": "Entregas Comerciais na Zona Leste de São Paulo",
+  "description": "Entregas comerciais na Zona Leste de São Paulo para lojas, restaurantes e distribuidores. Rotas recorrentes e orçamento pelo WhatsApp.",
+  "h1": "Entregas Comerciais em São Paulo",
+  "hero_subtitle": "Reposição de lojas, distribuição a mercados e rotas recorrentes na Zona Leste e na Grande São Paulo.",
+  "sobre_texto": "Lojas do Brás, mercados do Tatuapé e restaurantes da Mooca dependem de reposição pontual. A Frentes Confiança organiza entregas comerciais com rota planejada para atender vários pontos no mesmo dia, o que reduz o custo por parada e a chance de atraso. Para lojas e distribuidores de Vila Formosa e Carrão, a rota pode combinar pontos da própria Zona Leste com clientes da região central.\n\nO desafio na Zona Leste é o trânsito. Radial Leste, Avenida Aricanduva e Marginal Tietê concentram fluxo nos horários de pico, e a restrição de caminhões em partes da cidade pede veículos adequados. A empresa atua há mais de 10 anos na Grande São Paulo e região. Para orçar, informe a quantidade de pontos de entrega, a janela de recebimento, o volume por viagem e a frequência. Vale informar se o recebimento exige conferência de nota ou assinatura, porque isso altera o tempo de cada parada.",
+  "faq": [
+    {
+      "pergunta": "Como é cobrada uma rota recorrente?",
+      "resposta": "Pelo número de paradas, distância, volume e frequência. Peça orçamento pelo WhatsApp (11) 93932-9439."
+    },
+    {
+      "pergunta": "Entregam para vários pontos no mesmo dia?",
+      "resposta": "Sim. A rota é montada para agrupar os pontos por proximidade."
+    },
+    {
+      "pergunta": "Dá para fixar horário de entrega?",
+      "resposta": "Dá, quando a janela é informada previamente. Janelas muito curtas em horário de pico podem exigir ajuste de rota."
+    },
+    {
+      "pergunta": "Atendem restaurantes e mercados?",
+      "resposta": "Sim. Cargas perecíveis ou refrigeradas precisam ser avisadas, porque dependem de veículo adequado."
+    }
+  ]
+}
