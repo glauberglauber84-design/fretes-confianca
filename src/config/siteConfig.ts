@@ -4,8 +4,8 @@
  * Negocio de area de atendimento: NAO ha streetAddress, postalCode nem geo.
  */
 export const siteConfig = {
-  name: 'Frentes Confiança',
-  legalName: 'Frentes Confiança',
+  name: 'Fretes Confiança',
+  legalName: 'Fretes Confiança',
   phone: '(11) 93932-9439',
   phoneE164: '+5511939329439',
   phoneHref: 'tel:+5511939329439',

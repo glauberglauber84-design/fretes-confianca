@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // Dominio definitivo ainda nao definido: configure SITE_URL no Cloudflare Pages.
-const site = process.env.SITE_URL || 'https://frentes-confianca.pages.dev';
+const site = process.env.SITE_URL || 'https://fretes-confianca.pages.dev';
 
 export default defineConfig({
   site,
