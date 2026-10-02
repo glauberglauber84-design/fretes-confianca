@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ServicosGrid from '../../components/ServicosGrid.astro';
+import CTA from '../../components/CTA.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { siteConfig } from '../../config/siteConfig';
+import { itemList, localBusiness } from '../../lib/schema';
+
+const site = Astro.site!.href;
+const list = itemList(site, siteConfig.services.map((s) => ({ name: s.label, path: `/servicos/${s.slug}/` })));
+---
+<BaseLayout
+  title={`Serviços de fretes e mudanças | ${siteConfig.name}`}
+  description="Mudanças, fretes, transporte de cargas, entulho, entregas comerciais e mais na Zona Leste de SP e Grande São Paulo."
+  jsonld={[list, localBusiness(site)]}
+>
+  <Breadcrumb items={[{ name: 'Serviços', path: '/servicos/' }]} />
+  <div class="mx-auto max-w-6xl px-4 pt-6">
+    <h1 class="text-3xl font-extrabold md:text-4xl">Nossos serviços</h1>
+    <p class="mt-3 max-w-prose text-lg">Fretes e mudanças para casas, comércios e obras na Zona Leste de São Paulo e Grande São Paulo.</p>
+  </div>
+  <ServicosGrid titulo="Escolha o serviço" />
+  <div class="mt-12"><CTA /></div>
+</BaseLayout>

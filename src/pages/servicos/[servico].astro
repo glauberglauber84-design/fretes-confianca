@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTA from '../../components/CTA.astro';
+import ComoEncontrar from '../../components/ComoEncontrar.astro';
+import ServicosGrid from '../../components/ServicosGrid.astro';
+import { siteConfig, whatsappLink } from '../../config/siteConfig';
+import { getServicos, getCidades } from '../../lib/locais';
+import { service } from '../../lib/schema';
+
+export function getStaticPaths() {
+  return getServicos().map((s) => ({ params: { servico: s.slug }, props: { label: s.label } }));
+}
+const { servico } = Astro.params;
+const { label } = Astro.props;
+const info = siteConfig.services.find((s) => s.slug === servico)!;
+const cidades = getCidades();
+const faq = [
+  { pergunta: `Como peço orçamento de ${label.toLowerCase()}?`, resposta: `Chame no WhatsApp ${siteConfig.phone} e descreva o que precisa. Informe endereços, condições de acesso e a data desejada.` },
+  { pergunta: 'Em quais cidades esse serviço está disponível?', resposta: `Atendemos ${siteConfig.areaServed.join(', ')}.` },
+  { pergunta: 'O que devo informar no pedido?', resposta: 'O que será transportado, o endereço de retirada e de entrega, escadas ou elevador no local e o melhor dia e horário.' },
+];
+const desc = `${label} na Zona Leste de São Paulo, Guarulhos, Osasco, Santo André e São Bernardo. Peça orçamento pelo WhatsApp.`;
+---
+<BaseLayout
+  title={`${label} na Grande São Paulo | ${siteConfig.name}`.slice(0, 70)}
+  description={desc}
+  jsonld={[service(Astro.site!.href, { name: label, path: `/servicos/${servico}/`, areaServed: [...siteConfig.areaServed], description: info.short })]}
+>
+  <Breadcrumb items={[{ name: 'Serviços', path: '/servicos/' }, { name: label, path: `/servicos/${servico}/` }]} />
+  <div class="mx-auto max-w-6xl px-4 pt-6">
+    <h1 class="text-3xl font-extrabold md:text-4xl">{label} na Grande São Paulo</h1>
+    <p class="mt-3 max-w-prose text-lg">{info.short}</p>
+    <div class="prose-lc">
+      <p>A {siteConfig.name} atende a Zona Leste de São Paulo e cidades próximas, com {siteConfig.foundingNote} de atuação na região. Para pedir orçamento, chame no WhatsApp e conte os detalhes do serviço.</p>
+    </div>
+    <a href={whatsappLink(`Olá! Gostaria de orçamento de ${label}.`)} class="btn btn-wa mt-5">WhatsApp {siteConfig.phone}</a>
+  </div>
+
+  <section class="mx-auto max-w-6xl px-4 pt-12" aria-labelledby="cidades-titulo">
+    <h2 id="cidades-titulo" class="text-2xl font-extrabold md:text-3xl">{label} por cidade</h2>
+    <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {cidades.map((c) => (
+        <li>
+          <a href={`/${servico}/${c.slug}/`} class="flex min-h-[48px] items-center rounded-lg border border-brand-200 px-4 font-semibold text-brand-900 hover:border-brand-900 hover:bg-brand-50">
+            {label} em {c.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <FAQ items={faq} />
+  <ComoEncontrar />
+  <ServicosGrid excluir={servico} titulo="Outros serviços" />
+  <div class="mt-12"><CTA /></div>
+</BaseLayout>

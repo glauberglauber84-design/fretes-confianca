@@ -1,0 +1,36 @@
+---
+import { siteConfig } from '../config/siteConfig';
+import JsonLd from './JsonLd.astro';
+import { localBusiness } from '../lib/schema';
+---
+<section class="mx-auto max-w-6xl px-4 pt-12" aria-labelledby="onde-titulo">
+  <h2 id="onde-titulo" class="text-2xl font-extrabold md:text-3xl">Onde atendemos</h2>
+  <div class="mt-6 grid gap-8 md:grid-cols-2">
+    <div>
+      <p class="max-w-prose">
+        Atendemos a Zona Leste de São Paulo e cidades da Grande São Paulo. Não temos loja aberta ao público: o atendimento é feito pelo WhatsApp e o serviço vai até você.
+      </p>
+      <h3 class="mt-5 text-lg font-bold">Cidades atendidas</h3>
+      <ul class="mt-2 list-disc pl-5">
+        {siteConfig.areaServed.map((c) => <li>{c}</li>)}
+      </ul>
+      <address class="mt-5 not-italic">
+        <p class="font-bold text-brand-900">{siteConfig.name}</p>
+        <p>{siteConfig.region}</p>
+        <p>
+          <a class="inline-flex min-h-[44px] items-center font-semibold text-brand-900 underline" href={siteConfig.phoneHref}>{siteConfig.phone}</a>
+        </p>
+      </address>
+    </div>
+    <iframe
+      src={siteConfig.mapEmbedUrl}
+      title="Mapa da região de atendimento: Zona Leste, São Paulo - SP"
+      width="600"
+      height="400"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="h-72 w-full rounded-xl border border-brand-200 md:h-full md:min-h-[320px]"
+    ></iframe>
+  </div>
+  <JsonLd data={localBusiness(Astro.site!.href)} />
+</section>

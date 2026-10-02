@@ -1,0 +1,23 @@
+---
+import JsonLd from './JsonLd.astro';
+import { breadcrumbList } from '../lib/schema';
+interface Props {
+  items: { name: string; path: string }[]; // sem o "Início": ele e adicionado aqui
+}
+const all = [{ name: 'Início', path: '/' }, ...Astro.props.items];
+---
+<nav aria-label="Trilha" class="mx-auto max-w-6xl px-4 pt-4">
+  <ol class="flex flex-wrap items-center text-sm text-ink">
+    {all.map((it, i) => (
+      <li class="flex items-center">
+        {i > 0 && <span aria-hidden="true" class="px-1">/</span>}
+        {i === all.length - 1 ? (
+          <span aria-current="page" class="font-semibold">{it.name}</span>
+        ) : (
+          <a href={it.path} class="inline-flex min-h-[44px] items-center text-brand-900 underline">{it.name}</a>
+        )}
+      </li>
+    ))}
+  </ol>
+  <JsonLd data={breadcrumbList(Astro.site!.href, all)} />
+</nav>

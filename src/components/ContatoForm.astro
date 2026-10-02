@@ -1,0 +1,88 @@
+---
+import { siteConfig } from '../config/siteConfig';
+interface Props {
+  cidade?: string;
+  servico?: string;
+}
+const { cidade = '', servico = '' } = Astro.props;
+const field = 'mt-1 block min-h-[48px] w-full rounded-lg border-2 border-brand-300 bg-white px-3 py-2 text-ink focus:border-brand-900';
+const label = 'block font-semibold text-brand-900';
+const hint = 'mt-1 text-sm text-ink';
+---
+<section id="contato" class="mx-auto max-w-6xl scroll-mt-4 px-4 pt-12" aria-labelledby="contato-titulo">
+  <h2 id="contato-titulo" class="text-2xl font-extrabold md:text-3xl">Peça seu orçamento</h2>
+  <p class="mt-2 max-w-prose">Preencha os dados e continue a conversa pelo WhatsApp. Se preferir, chame direto em {siteConfig.phone}.</p>
+  <form id="form-orcamento" action="/api/lead" method="post" class="mt-6 grid max-w-2xl gap-4" data-wa={siteConfig.whatsappUrl}>
+    <div>
+      <label for="f-nome" class={label}>Nome</label>
+      <input id="f-nome" name="nome" type="text" autocomplete="name" required minlength="2" maxlength="80" class={field} aria-describedby="f-nome-d" />
+      <p id="f-nome-d" class={hint}>Como podemos te chamar.</p>
+    </div>
+    <div>
+      <label for="f-tel" class={label}>WhatsApp ou telefone</label>
+      <input id="f-tel" name="telefone" type="tel" inputmode="tel" autocomplete="tel" required minlength="10" maxlength="20" class={field} aria-describedby="f-tel-d" />
+      <p id="f-tel-d" class={hint}>Com DDD, por exemplo (11) 90000-0000.</p>
+    </div>
+    <div>
+      <label for="f-cidade" class={label}>Cidade</label>
+      <select id="f-cidade" name="cidade" required class={field}>
+        <option value="">Selecione a cidade</option>
+        {siteConfig.cities.map((c) => <option value={c.label} selected={c.slug === cidade}>{c.label}</option>)}
+      </select>
+    </div>
+    <div>
+      <label for="f-servico" class={label}>Serviço</label>
+      <select id="f-servico" name="servico" required class={field}>
+        <option value="">Selecione o serviço</option>
+        {siteConfig.services.map((s) => <option value={s.label} selected={s.slug === servico}>{s.label}</option>)}
+      </select>
+    </div>
+    <div>
+      <label for="f-msg" class={label}>Mensagem</label>
+      <textarea id="f-msg" name="mensagem" rows="4" required maxlength="1000" class={field} aria-describedby="f-msg-d"></textarea>
+      <p id="f-msg-d" class={hint}>Conte o que será transportado, endereços de retirada e entrega e a data desejada.</p>
+    </div>
+    <div class="absolute -left-[9999px]" aria-hidden="true">
+      <label for="f-site">Não preencha este campo</label>
+      <input id="f-site" name="website" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    <p id="f-erro" role="alert" class="font-semibold text-red-800" hidden></p>
+    <button type="submit" class="btn btn-wa">Enviar pelo WhatsApp</button>
+    <p class="text-sm text-ink">
+      Ao enviar, você concorda que usemos seu nome, telefone e mensagem apenas para responder ao seu pedido. Veja a
+      <a href="/politica-de-privacidade/" class="font-semibold text-brand-900 underline">Política de Privacidade</a>.
+    </p>
+  </form>
+</section>
+
+<script>
+  const form = document.getElementById('form-orcamento') as HTMLFormElement | null;
+  form?.addEventListener('submit', (e) => {
+    const d = new FormData(form);
+    if (String(d.get('website') || '')) return;
+    const erro = document.getElementById('f-erro');
+    const tel = String(d.get('telefone') || '').replace(/\D/g, '');
+    if (tel.length < 10) {
+      e.preventDefault();
+      if (erro) {
+        erro.textContent = 'Informe um telefone com DDD.';
+        erro.hidden = false;
+      }
+      return;
+    }
+    e.preventDefault();
+    const msg = [
+      'Olá! Gostaria de pedir um orçamento.',
+      `Nome: ${d.get('nome')}`,
+      `Telefone: ${d.get('telefone')}`,
+      `Cidade: ${d.get('cidade')}`,
+      `Serviço: ${d.get('servico')}`,
+      `Mensagem: ${d.get('mensagem')}`,
+    ].join('\n');
+    // Registro best-effort do lead (Pages Function); o canal principal e o WhatsApp.
+    try {
+      navigator.sendBeacon('/api/lead?ajax=1', d);
+    } catch {}
+    window.location.href = `${form.dataset.wa}?text=${encodeURIComponent(msg)}`;
+  });
+</script>

@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import { siteConfig } from '../config/siteConfig';
+---
+<BaseLayout title={`Página não encontrada | ${siteConfig.name}`} description="A página que você procurou não foi encontrada." noindex>
+  <div class="mx-auto max-w-3xl px-4 pt-10">
+    <h1 class="text-3xl font-extrabold md:text-4xl">Página não encontrada</h1>
+    <p class="mt-3 text-lg">O endereço pode ter mudado. Veja alguns caminhos úteis:</p>
+    <ul class="mt-4">
+      <li><a class="inline-flex min-h-[44px] items-center font-semibold text-brand-900 underline" href="/">Página inicial</a></li>
+      <li><a class="inline-flex min-h-[44px] items-center font-semibold text-brand-900 underline" href="/servicos/">Serviços</a></li>
+      <li><a class="inline-flex min-h-[44px] items-center font-semibold text-brand-900 underline" href="/contato/">Contato</a></li>
+    </ul>
+  </div>
+  <div class="mt-12"><CTA /></div>
+</BaseLayout>

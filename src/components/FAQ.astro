@@ -1,0 +1,25 @@
+---
+import JsonLd from './JsonLd.astro';
+import { faqPage } from '../lib/schema';
+import type { FaqItem } from '../lib/pageContent';
+interface Props {
+  items: FaqItem[];
+  titulo?: string;
+}
+const { items, titulo = 'Perguntas frequentes' } = Astro.props;
+---
+<section class="mx-auto max-w-6xl px-4 pt-12" aria-labelledby="faq-titulo">
+  <h2 id="faq-titulo" class="text-2xl font-extrabold md:text-3xl">{titulo}</h2>
+  <div class="mt-6 max-w-3xl divide-y divide-brand-200 rounded-xl border border-brand-200">
+    {items.map((i) => (
+      <details class="group px-4">
+        <summary class="flex min-h-[48px] cursor-pointer list-none items-center justify-between gap-3 py-3 font-bold text-brand-900">
+          <span>{i.pergunta}</span>
+          <span aria-hidden="true" class="text-xl transition-transform group-open:rotate-45">+</span>
+        </summary>
+        <p class="pb-4 text-ink">{i.resposta}</p>
+      </details>
+    ))}
+  </div>
+  <JsonLd data={faqPage(items)} />
+</section>

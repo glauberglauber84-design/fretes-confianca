@@ -1,0 +1,20 @@
+---
+import { siteConfig } from '../config/siteConfig';
+interface Props {
+  texto?: string; // paragrafos separados por \n\n (sobre_texto da Maria)
+  titulo?: string;
+}
+const { texto, titulo = `Sobre a ${siteConfig.name}` } = Astro.props;
+const paragrafos = texto
+  ? texto.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean)
+  : [
+      `A ${siteConfig.name} presta serviços de fretes e mudanças há ${siteConfig.foundingNote}, atendendo a Grande São Paulo e região.`,
+      'Buscamos sempre atender melhor os clientes: você conta o que precisa pelo WhatsApp e combinamos o serviço de forma clara.',
+    ];
+---
+<section class="mx-auto max-w-6xl px-4 pt-12" aria-labelledby="sobre-titulo">
+  <h2 id="sobre-titulo" class="text-2xl font-extrabold md:text-3xl">{titulo}</h2>
+  <div class="prose-lc">
+    {paragrafos.map((p) => <p>{p}</p>)}
+  </div>
+</section>

@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { siteConfig } from '../config/siteConfig';
+import { webPage } from '../lib/schema';
+
+const description = `Como a ${siteConfig.name} trata os dados pessoais coletados no site, conforme a LGPD.`;
+---
+<BaseLayout
+  title={`Política de Privacidade | ${siteConfig.name}`}
+  description={description}
+  jsonld={[webPage(Astro.site!.href, { name: 'Política de Privacidade', path: '/politica-de-privacidade/', description })]}
+>
+  <Breadcrumb items={[{ name: 'Política de Privacidade', path: '/politica-de-privacidade/' }]} />
+  <article class="mx-auto max-w-3xl px-4 pt-6">
+    <h1 class="text-3xl font-extrabold md:text-4xl">Política de Privacidade</h1>
+    <div class="prose-lc">
+      <p>Esta política explica como a {siteConfig.name} trata os dados pessoais coletados neste site, de acordo com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).</p>
+      <h2>Quais dados coletamos</h2>
+      <p>Quando você preenche o formulário de orçamento, coletamos o nome, o telefone ou WhatsApp, a cidade, o serviço desejado e a mensagem que você escrever.</p>
+      <h2>Para que usamos</h2>
+      <p>Usamos esses dados apenas para responder ao seu pedido de orçamento e combinar o serviço. Não vendemos seus dados e não os usamos para outras finalidades sem o seu consentimento.</p>
+      <h2>Com quem compartilhamos</h2>
+      <p>Os dados são usados pela nossa equipe de atendimento. Podem passar por ferramentas de hospedagem e de mensagens (como o WhatsApp) necessárias para o funcionamento do contato.</p>
+      <h2>Por quanto tempo guardamos</h2>
+      <p>Mantemos os dados pelo tempo necessário para atender seu pedido e cumprir obrigações legais. Depois disso, eles são excluídos.</p>
+      <h2>Seus direitos</h2>
+      <p>Você pode pedir acesso, correção ou exclusão dos seus dados, e retirar o consentimento a qualquer momento.</p>
+      <h2>Contato</h2>
+      <p>Para exercer seus direitos ou tirar dúvidas, fale conosco pelo WhatsApp <a class="font-bold text-brand-900 underline" href={siteConfig.whatsappUrl}>{siteConfig.phone}</a>.</p>
+    </div>
+  </article>
+</BaseLayout>

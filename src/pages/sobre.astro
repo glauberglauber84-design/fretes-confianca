@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Sobre from '../components/Sobre.astro';
+import ComoEncontrar from '../components/ComoEncontrar.astro';
+import CTA from '../components/CTA.astro';
+import { siteConfig } from '../config/siteConfig';
+import { webPage } from '../lib/schema';
+
+const description = `Conheça a ${siteConfig.name}: ${siteConfig.foundingNote} atendendo fretes e mudanças na Grande São Paulo.`;
+---
+<BaseLayout
+  title={`Sobre a ${siteConfig.name} | Fretes e Mudanças`}
+  description={description}
+  jsonld={[webPage(Astro.site!.href, { type: 'AboutPage', name: `Sobre a ${siteConfig.name}`, path: '/sobre/', description })]}
+>
+  <Breadcrumb items={[{ name: 'Sobre', path: '/sobre/' }]} />
+  <div class="mx-auto max-w-6xl px-4 pt-6">
+    <h1 class="text-3xl font-extrabold md:text-4xl">Sobre a {siteConfig.name}</h1>
+  </div>
+  <Sobre titulo="Nossa história" />
+  <ComoEncontrar />
+  <div class="mt-12"><CTA /></div>
+</BaseLayout>

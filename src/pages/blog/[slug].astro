@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTA from '../../components/CTA.astro';
+import { siteConfig } from '../../config/siteConfig';
+import { posts } from '../../config/posts';
+import { blogPosting } from '../../lib/schema';
+
+export function getStaticPaths() {
+  return posts.map((p) => ({ params: { slug: p.slug }, props: { post: p } }));
+}
+const { post } = Astro.props;
+const path = `/blog/${post.slug}/`;
+---
+<BaseLayout
+  title={`${post.title} | ${siteConfig.name}`}
+  description={post.summary}
+  jsonld={[blogPosting(Astro.site!.href, { title: post.title, description: post.summary, path })]}
+>
+  <Breadcrumb items={[{ name: 'Guias', path: '/blog/' }, { name: post.title, path }]} />
+  <article class="mx-auto max-w-3xl px-4 pt-6">
+    <h1 class="text-3xl font-extrabold md:text-4xl">{post.title}</h1>
+    <div class="prose-lc">
+      {post.body.map((b) => (b.startsWith('## ') ? <h2>{b.slice(3)}</h2> : <p>{b}</p>))}
+    </div>
+    <p class="mt-8">
+      Quer ajuda com o seu serviço? <a class="font-bold text-brand-900 underline" href="/contato/">Peça um orçamento</a> pelo WhatsApp {siteConfig.phone}.
+    </p>
+  </article>
+  <div class="mt-12"><CTA /></div>
+</BaseLayout>

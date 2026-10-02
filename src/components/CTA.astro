@@ -1,0 +1,22 @@
+---
+import { siteConfig, whatsappLink } from '../config/siteConfig';
+interface Props {
+  title?: string;
+  text?: string;
+  waText?: string;
+}
+const {
+  title = 'Precisa de frete ou mudança?',
+  text = 'Chame no WhatsApp, conte o que precisa transportar e receba o orçamento.',
+  waText = 'Olá! Gostaria de pedir um orçamento.',
+} = Astro.props;
+---
+<section class="on-dark bg-brand-900 text-white">
+  <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 md:flex-row md:items-center md:justify-between">
+    <div>
+      <h2 class="font-display text-2xl font-extrabold !text-white">{title}</h2>
+      <p class="mt-1 max-w-xl text-brand-100">{text}</p>
+    </div>
+    <a href={whatsappLink(waText)} class="btn btn-wa shrink-0 !bg-white !text-brand-900 hover:!bg-brand-100">WhatsApp {siteConfig.phone}</a>
+  </div>
+</section>

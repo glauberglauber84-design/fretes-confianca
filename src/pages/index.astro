@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServicosGrid from '../components/ServicosGrid.astro';
+import Sobre from '../components/Sobre.astro';
+import ComoEncontrar from '../components/ComoEncontrar.astro';
+import PostsGrid from '../components/PostsGrid.astro';
+import FAQ from '../components/FAQ.astro';
+import ContatoForm from '../components/ContatoForm.astro';
+import CTA from '../components/CTA.astro';
+import { siteConfig } from '../config/siteConfig';
+import { webSite } from '../lib/schema';
+
+const faq = [
+  { pergunta: 'Como peço um orçamento?', resposta: `Chame no WhatsApp ${siteConfig.phone} ou preencha o formulário desta página. Informe o que será transportado, os endereços e a data desejada.` },
+  { pergunta: 'Quais cidades vocês atendem?', resposta: `Atendemos ${siteConfig.areaServed.join(', ')}.` },
+  { pergunta: 'Quais serviços vocês oferecem?', resposta: `Oferecemos ${siteConfig.services.map((s) => s.label.toLowerCase()).join(', ')}.` },
+  { pergunta: 'Preciso ir até algum endereço da empresa?', resposta: 'Não. O atendimento é feito pelo WhatsApp e o serviço vai até você, na região de atendimento.' },
+  { pergunta: 'O que informar para agilizar o orçamento?', resposta: 'Descreva os itens, o endereço de retirada e de entrega, as condições de acesso (escada, elevador) e o melhor dia e horário.' },
+];
+---
+<BaseLayout
+  title={`${siteConfig.name} | Fretes e Mudanças na Zona Leste de SP`}
+  description="Fretes e mudanças na Zona Leste de São Paulo, Guarulhos, Osasco, Santo André e São Bernardo. Peça orçamento pelo WhatsApp."
+  jsonld={[webSite(Astro.site!.href)]}
+>
+  <Hero
+    h1="Fretes e mudanças na Zona Leste de São Paulo"
+    subtitle={`Mais de 10 anos atendendo a Grande São Paulo. Chame no WhatsApp ${siteConfig.phone} e peça seu orçamento.`}
+  />
+  <ServicosGrid />
+  <Sobre />
+  <ComoEncontrar />
+  <PostsGrid />
+  <FAQ items={faq} />
+  <ContatoForm />
+  <div class="mt-12"><CTA /></div>
+</BaseLayout>

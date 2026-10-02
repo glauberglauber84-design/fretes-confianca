@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ContatoForm from '../components/ContatoForm.astro';
+import ComoEncontrar from '../components/ComoEncontrar.astro';
+import { siteConfig } from '../config/siteConfig';
+import { webPage } from '../lib/schema';
+
+const description = `Fale com a ${siteConfig.name} pelo WhatsApp ${siteConfig.phone} e peça orçamento de frete ou mudança.`;
+---
+<BaseLayout
+  title={`Contato e orçamento | ${siteConfig.name}`}
+  description={description}
+  jsonld={[webPage(Astro.site!.href, { type: 'ContactPage', name: 'Contato', path: '/contato/', description })]}
+>
+  <Breadcrumb items={[{ name: 'Contato', path: '/contato/' }]} />
+  <div class="mx-auto max-w-6xl px-4 pt-6">
+    <h1 class="text-3xl font-extrabold md:text-4xl">Contato</h1>
+    <p class="mt-3 max-w-prose text-lg">WhatsApp e telefone: <a class="font-bold text-brand-900 underline" href={siteConfig.phoneHref}>{siteConfig.phone}</a>. {siteConfig.region}.</p>
+  </div>
+  <ContatoForm />
+  <ComoEncontrar />
+</BaseLayout>

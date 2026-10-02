@@ -1,0 +1,100 @@
+@import 'tailwindcss';
+
+/* Fontes self-hosted (woff2 em /public/fonts). Subconjunto latin cobre pt-BR. Nunca Google Fonts. */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'Manrope Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('/fonts/manrope-latin-wght-normal.woff2') format('woff2-variations');
+}
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-display: 'Manrope Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Marca: azul escuro #1a3a6b = brand-900. Tons claros (50-300) so como FUNDO. */
+  --color-brand-50: #eef3fb;
+  --color-brand-100: #dce6f5;
+  --color-brand-200: #b9cdeb;
+  --color-brand-300: #8eacd8;
+  --color-brand-400: #5b82bd;
+  --color-brand-500: #3a609f;
+  --color-brand-600: #2c4f8a;
+  --color-brand-700: #234279;
+  --color-brand-800: #1e386f;
+  --color-brand-900: #1a3a6b;
+  --color-brand-950: #0f2342;
+
+  /* Botao WhatsApp: verde escuro com texto branco (#1a7f44 vs branco = 5.05:1; o #1f8a4c do handoff dava 4.38:1, abaixo de AA). */
+  --color-whatsapp: #1a7f44;
+  --color-whatsapp-dark: #146535;
+  --color-ink: #11213d;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: #fff;
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--color-brand-900);
+  line-height: 1.2;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand-900);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.on-dark :focus-visible,
+.focus-light:focus-visible {
+  outline-color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Alvos de toque minimos de 44px */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  min-width: 44px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+.btn-wa { background: var(--color-whatsapp); color: #fff; }
+.btn-wa:hover { background: var(--color-whatsapp-dark); }
+.btn-primary { background: var(--color-brand-900); color: #fff; }
+.btn-primary:hover { background: var(--color-brand-950); }
+.btn-outline { background: #fff; color: var(--color-brand-900); border: 2px solid var(--color-brand-900); }
+.btn-outline:hover { background: var(--color-brand-50); }
+
+.prose-lc p { margin-top: 1rem; max-width: 68ch; }
+.prose-lc h2 { margin-top: 2rem; font-size: 1.4rem; font-weight: 800; }
