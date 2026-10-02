@@ -12,13 +12,13 @@ const a = 'inline-flex min-h-[44px] items-center underline-offset-2 hover:underl
       <p class="mt-3 text-brand-100">{siteConfig.region}</p>
     </div>
     <div>
-      <h2 class="font-display text-lg font-bold !text-white">Serviços</h2>
+      <h2 class="font-display font-bold !text-white">Serviços</h2>
       <ul class="mt-2">
         {siteConfig.services.map((s) => <li><a class={a} href={`/servicos/${s.slug}/`}>{s.label}</a></li>)}
       </ul>
     </div>
     <div>
-      <h2 class="font-display text-lg font-bold !text-white">Contato</h2>
+      <h2 class="font-display font-bold !text-white">Contato</h2>
       <address class="mt-2 not-italic">
         <p class="font-semibold">{siteConfig.name}</p>
         <p>{siteConfig.region}</p>
@@ -29,7 +29,7 @@ const a = 'inline-flex min-h-[44px] items-center underline-offset-2 hover:underl
           <a class={a} href={siteConfig.whatsappUrl}>Chamar no WhatsApp</a>
         </p>
       </address>
-      <h3 class="mt-4 font-display text-base font-bold !text-white">Cidades atendidas</h3>
+      <h3 class="mt-4 font-display font-bold !text-white">Cidades atendidas</h3>
       <p class="mt-1 text-brand-100">{siteConfig.areaServed.join(' · ')}</p>
     </div>
   </div>

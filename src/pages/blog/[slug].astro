@@ -19,7 +19,7 @@ const path = `/blog/${post.slug}/`;
 >
   <Breadcrumb items={[{ name: 'Guias', path: '/blog/' }, { name: post.title, path }]} />
   <article class="mx-auto max-w-3xl px-4 pt-6">
-    <h1 class="text-3xl font-extrabold md:text-4xl">{post.title}</h1>
+    <h1 class="font-extrabold">{post.title}</h1>
     <div class="prose-lc">
       {post.body.map((b) => (b.startsWith('## ') ? <h2>{b.slice(3)}</h2> : <p>{b}</p>))}
     </div>

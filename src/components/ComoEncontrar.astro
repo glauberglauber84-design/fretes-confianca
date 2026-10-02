@@ -4,13 +4,13 @@ import JsonLd from './JsonLd.astro';
 import { localBusiness } from '../lib/schema';
 ---
 <section class="mx-auto max-w-6xl px-4 pt-12" aria-labelledby="onde-titulo">
-  <h2 id="onde-titulo" class="text-2xl font-extrabold md:text-3xl">Onde atendemos</h2>
+  <h2 id="onde-titulo" class="font-extrabold">Onde atendemos</h2>
   <div class="mt-6 grid gap-8 md:grid-cols-2">
     <div>
       <p class="max-w-prose">
         Atendemos a Zona Leste de São Paulo e cidades da Grande São Paulo. Não temos loja aberta ao público: o atendimento é feito pelo WhatsApp e o serviço vai até você.
       </p>
-      <h3 class="mt-5 text-lg font-bold">Cidades atendidas</h3>
+      <h3 class="mt-5 font-bold">Cidades atendidas</h3>
       <ul class="mt-2 list-disc pl-5">
         {siteConfig.areaServed.map((c) => <li>{c}</li>)}
       </ul>

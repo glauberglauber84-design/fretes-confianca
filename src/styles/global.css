@@ -37,6 +37,20 @@
   --color-whatsapp: #1a7f44;
   --color-whatsapp-dark: #146535;
   --color-ink: #11213d;
+
+  /*
+   * ESCALA TIPOGRAFICA (razao 1.25, base 16px). Passos: 16 / 20 / 25 / 31 / 39 / 49.
+   *   caption  .875rem (14)  | body 1rem (16) | lead 1.125rem (18)
+   *   h3 1.25rem (20) | h2 clamp 1.5rem(24)->1.95rem(31) | h1 clamp 1.75rem(28)->3rem(48)
+   * Hierarquia: h1 > h2 > h3 > body > caption. Corpo line-height 1.6; titulos 1.15-1.3.
+   *
+   * ESPACAMENTO (base 4px, tokens do Tailwind 1 = 4px): usar so multiplos de 4/8:
+   *   1(4) 2(8) 3(12) 4(16) 6(24) 8(32) 10(40) 12(48) 16(64). Secoes: pt-12 (48) / py-12.
+   *   Sem valores arbitrarios (p-[..]) exceto min-h-[44px/48px] de alvo de toque.
+   */
+  --text-h3: 1.25rem;
+  --text-h2: clamp(1.5rem, 1.25rem + 1vw, 1.95rem);
+  --text-h1: clamp(1.75rem, 1.35rem + 2vw, 3rem);
 }
 
 html {
@@ -52,8 +66,12 @@ body {
 h1, h2, h3 {
   font-family: var(--font-display);
   color: var(--color-brand-900);
-  line-height: 1.2;
+  text-wrap: balance;
 }
+h1 { font-size: var(--text-h1); line-height: 1.15; letter-spacing: -0.01em; }
+h2 { font-size: var(--text-h2); line-height: 1.25; }
+h3 { font-size: var(--text-h3); line-height: 1.3; }
+.on-dark h2, .on-dark h3 { color: #fff; }
 
 :focus-visible {
   outline: 3px solid var(--color-brand-900);
@@ -97,4 +115,7 @@ h1, h2, h3 {
 .btn-outline:hover { background: var(--color-brand-50); }
 
 .prose-lc p { margin-top: 1rem; max-width: 68ch; }
-.prose-lc h2 { margin-top: 2rem; font-size: 1.4rem; font-weight: 800; }
+.prose-lc h2 { margin-top: 2rem; font-weight: 800; }
+
+/* Estados de campo: erro so apos interacao (nao pinta vazio no load) */
+input:user-invalid, select:user-invalid, textarea:user-invalid { border-color: #b91c1c; }

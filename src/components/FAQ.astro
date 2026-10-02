@@ -9,7 +9,7 @@ interface Props {
 const { items, titulo = 'Perguntas frequentes' } = Astro.props;
 ---
 <section class="mx-auto max-w-6xl px-4 pt-12" aria-labelledby="faq-titulo">
-  <h2 id="faq-titulo" class="text-2xl font-extrabold md:text-3xl">{titulo}</h2>
+  <h2 id="faq-titulo" class="font-extrabold">{titulo}</h2>
   <div class="mt-6 max-w-3xl divide-y divide-brand-200 rounded-xl border border-brand-200">
     {items.map((i) => (
       <details class="group px-4">

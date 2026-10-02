@@ -30,7 +30,7 @@ const desc = `${label} na Zona Leste de São Paulo, Guarulhos, Osasco, Santo And
 >
   <Breadcrumb items={[{ name: 'Serviços', path: '/servicos/' }, { name: label, path: `/servicos/${servico}/` }]} />
   <div class="mx-auto max-w-6xl px-4 pt-6">
-    <h1 class="text-3xl font-extrabold md:text-4xl">{label} na Grande São Paulo</h1>
+    <h1 class="font-extrabold">{label} na Grande São Paulo</h1>
     <p class="mt-3 max-w-prose text-lg">{info.short}</p>
     <div class="prose-lc">
       <p>A {siteConfig.name} atende a Zona Leste de São Paulo e cidades próximas, com {siteConfig.foundingNote} de atuação na região. Para pedir orçamento, chame no WhatsApp e conte os detalhes do serviço.</p>
@@ -39,7 +39,7 @@ const desc = `${label} na Zona Leste de São Paulo, Guarulhos, Osasco, Santo And
   </div>
 
   <section class="mx-auto max-w-6xl px-4 pt-12" aria-labelledby="cidades-titulo">
-    <h2 id="cidades-titulo" class="text-2xl font-extrabold md:text-3xl">{label} por cidade</h2>
+    <h2 id="cidades-titulo" class="font-extrabold">{label} por cidade</h2>
     <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {cidades.map((c) => (
         <li>

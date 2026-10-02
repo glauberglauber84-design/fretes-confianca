@@ -38,7 +38,7 @@ const path = `/${loc.servico}/${loc.cidade}/`;
   <Sobre texto={content.sobre_texto} titulo={`${loc.servicoLabel} em ${loc.cidadeLabel}: como funciona`} />
 
   <section class="mx-auto max-w-6xl px-4 pt-12" aria-labelledby="mesmo-servico">
-    <h2 id="mesmo-servico" class="text-2xl font-extrabold md:text-3xl">{loc.servicoLabel} em outras cidades</h2>
+    <h2 id="mesmo-servico" class="font-extrabold">{loc.servicoLabel} em outras cidades</h2>
     <ul class="mt-4 flex flex-wrap gap-3">
       {outras.map((c) => (
         <li>
