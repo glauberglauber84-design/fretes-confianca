@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
-// Dominio definitivo ainda nao definido: configure SITE_URL no Cloudflare Pages.
-const site = process.env.SITE_URL || 'https://fretes-confianca.pages.dev';
+// Dominio definitivo ainda nao definido: sobrescreva com SITE_URL ao ter dominio proprio.
+const site = process.env.SITE_URL || 'https://fretes-confianca.glauberglauber84.workers.dev';
 
 export default defineConfig({
   site,
