@@ -1,0 +1,25 @@
+{
+  "title": "Fretes na Zona Leste de São Paulo | Frentes Confiança",
+  "description": "Frete avulso na Zona Leste de São Paulo para móveis, eletrodomésticos e pequenas cargas. Informe origem e destino e peça orçamento pelo WhatsApp.",
+  "h1": "Fretes na Zona Leste de São Paulo",
+  "hero_subtitle": "Transporte avulso de móveis, eletrodomésticos e pequenas cargas, com rota combinada entre origem e destino.",
+  "sobre_texto": "Frete é o item que não justifica uma mudança inteira: um sofá comprado em loja na Penha, uma geladeira a levar de Vila Matilde ao Tatuapé, uma cômoda herdada que vai para outra casa. A Frentes Confiança atende esse tipo de pedido a partir da Zona Leste, com horário combinado e retirada no endereço indicado. Também há quem peça frete para levar compras do Shopping Aricanduva ou de lojas do Brás até a casa, sem precisar alugar veículo por conta própria.\n\nO trajeto pesa mais que a distância. Radial Leste, Avenida Aricanduva e Marginal Tietê concentram trânsito em horários de pico, e o caminhão precisa de acesso real à porta. Para orçar, informe o que será carregado, as medidas aproximadas, o andar de retirada e entrega, e se há elevador. Com mais de 10 anos na Grande São Paulo e região, a empresa trabalha com esses detalhes antes de fechar o dia. Vale lembrar que o caminhão grande tem restrição em áreas centrais da cidade, e itens de volume menor ajudam a escolher um veículo que circule melhor.",
+  "faq": [
+    {
+      "pergunta": "Como é calculado o frete avulso na Zona Leste?",
+      "resposta": "O valor leva em conta a distância entre retirada e entrega, o tamanho e o peso do item, ajudantes necessários e dificuldade de acesso. Mande foto e endereços pelo WhatsApp (11) 93932-9439 para receber o orçamento."
+    },
+    {
+      "pergunta": "Dá para fazer o frete no mesmo dia?",
+      "resposta": "Depende da agenda daquele dia. Pedidos feitos cedo e com informações completas têm mais chance de encaixe. Para datas fechadas, como entrega de loja, vale combinar com antecedência."
+    },
+    {
+      "pergunta": "O que preciso informar para o orçamento?",
+      "resposta": "Endereço de retirada e de entrega, descrição e medidas dos itens, andar, presença de elevador e horário desejado. Foto do item ajuda muito, principalmente de peças grandes."
+    },
+    {
+      "pergunta": "O caminhão leva só um item ou mais de um?",
+      "resposta": "Os dois casos são comuns. Pode ser uma única peça ou várias de uma mesma retirada. Itens de endereços diferentes viram paradas extras e entram no cálculo do trajeto."
+    }
+  ]
+}
