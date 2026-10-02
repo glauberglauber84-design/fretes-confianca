@@ -1,0 +1,362 @@
+[
+  {
+    "servico": "mudancas",
+    "servicoLabel": "Mudanças",
+    "cidade": "sao-paulo",
+    "cidadeLabel": "São Paulo",
+    "estado": "SP",
+    "principal": true,
+    "servicoPrincipal": true
+  },
+  {
+    "servico": "mudancas",
+    "servicoLabel": "Mudanças",
+    "cidade": "guarulhos",
+    "cidadeLabel": "Guarulhos",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": true
+  },
+  {
+    "servico": "mudancas",
+    "servicoLabel": "Mudanças",
+    "cidade": "osasco",
+    "cidadeLabel": "Osasco",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": true
+  },
+  {
+    "servico": "mudancas",
+    "servicoLabel": "Mudanças",
+    "cidade": "santo-andre",
+    "cidadeLabel": "Santo André",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": true
+  },
+  {
+    "servico": "mudancas",
+    "servicoLabel": "Mudanças",
+    "cidade": "sao-bernardo-do-campo",
+    "cidadeLabel": "São Bernardo do Campo",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": true
+  },
+  {
+    "servico": "fretes",
+    "servicoLabel": "Fretes",
+    "cidade": "sao-paulo",
+    "cidadeLabel": "São Paulo",
+    "estado": "SP",
+    "principal": true,
+    "servicoPrincipal": true
+  },
+  {
+    "servico": "fretes",
+    "servicoLabel": "Fretes",
+    "cidade": "guarulhos",
+    "cidadeLabel": "Guarulhos",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": true
+  },
+  {
+    "servico": "fretes",
+    "servicoLabel": "Fretes",
+    "cidade": "osasco",
+    "cidadeLabel": "Osasco",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": true
+  },
+  {
+    "servico": "fretes",
+    "servicoLabel": "Fretes",
+    "cidade": "santo-andre",
+    "cidadeLabel": "Santo André",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": true
+  },
+  {
+    "servico": "fretes",
+    "servicoLabel": "Fretes",
+    "cidade": "sao-bernardo-do-campo",
+    "cidadeLabel": "São Bernardo do Campo",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": true
+  },
+  {
+    "servico": "transporte-entulho-limpeza-obra",
+    "servicoLabel": "Transporte de Entulho/Limpeza de Obra",
+    "cidade": "sao-paulo",
+    "cidadeLabel": "São Paulo",
+    "estado": "SP",
+    "principal": true,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-entulho-limpeza-obra",
+    "servicoLabel": "Transporte de Entulho/Limpeza de Obra",
+    "cidade": "guarulhos",
+    "cidadeLabel": "Guarulhos",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-entulho-limpeza-obra",
+    "servicoLabel": "Transporte de Entulho/Limpeza de Obra",
+    "cidade": "osasco",
+    "cidadeLabel": "Osasco",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-entulho-limpeza-obra",
+    "servicoLabel": "Transporte de Entulho/Limpeza de Obra",
+    "cidade": "santo-andre",
+    "cidadeLabel": "Santo André",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-entulho-limpeza-obra",
+    "servicoLabel": "Transporte de Entulho/Limpeza de Obra",
+    "cidade": "sao-bernardo-do-campo",
+    "cidadeLabel": "São Bernardo do Campo",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-cargas",
+    "servicoLabel": "Transporte de Cargas",
+    "cidade": "sao-paulo",
+    "cidadeLabel": "São Paulo",
+    "estado": "SP",
+    "principal": true,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-cargas",
+    "servicoLabel": "Transporte de Cargas",
+    "cidade": "guarulhos",
+    "cidadeLabel": "Guarulhos",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-cargas",
+    "servicoLabel": "Transporte de Cargas",
+    "cidade": "osasco",
+    "cidadeLabel": "Osasco",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-cargas",
+    "servicoLabel": "Transporte de Cargas",
+    "cidade": "santo-andre",
+    "cidadeLabel": "Santo André",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-cargas",
+    "servicoLabel": "Transporte de Cargas",
+    "cidade": "sao-bernardo-do-campo",
+    "cidadeLabel": "São Bernardo do Campo",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "coleta-entulho-reciclaveis",
+    "servicoLabel": "Coleta de Entulho e Recicláveis",
+    "cidade": "sao-paulo",
+    "cidadeLabel": "São Paulo",
+    "estado": "SP",
+    "principal": true,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "coleta-entulho-reciclaveis",
+    "servicoLabel": "Coleta de Entulho e Recicláveis",
+    "cidade": "guarulhos",
+    "cidadeLabel": "Guarulhos",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "coleta-entulho-reciclaveis",
+    "servicoLabel": "Coleta de Entulho e Recicláveis",
+    "cidade": "osasco",
+    "cidadeLabel": "Osasco",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "coleta-entulho-reciclaveis",
+    "servicoLabel": "Coleta de Entulho e Recicláveis",
+    "cidade": "santo-andre",
+    "cidadeLabel": "Santo André",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "coleta-entulho-reciclaveis",
+    "servicoLabel": "Coleta de Entulho e Recicláveis",
+    "cidade": "sao-bernardo-do-campo",
+    "cidadeLabel": "São Bernardo do Campo",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "entregas-comerciais",
+    "servicoLabel": "Entregas Comerciais",
+    "cidade": "sao-paulo",
+    "cidadeLabel": "São Paulo",
+    "estado": "SP",
+    "principal": true,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "entregas-comerciais",
+    "servicoLabel": "Entregas Comerciais",
+    "cidade": "guarulhos",
+    "cidadeLabel": "Guarulhos",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "entregas-comerciais",
+    "servicoLabel": "Entregas Comerciais",
+    "cidade": "osasco",
+    "cidadeLabel": "Osasco",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "entregas-comerciais",
+    "servicoLabel": "Entregas Comerciais",
+    "cidade": "santo-andre",
+    "cidadeLabel": "Santo André",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "entregas-comerciais",
+    "servicoLabel": "Entregas Comerciais",
+    "cidade": "sao-bernardo-do-campo",
+    "cidadeLabel": "São Bernardo do Campo",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-equipamentos",
+    "servicoLabel": "Transporte de Equipamentos",
+    "cidade": "sao-paulo",
+    "cidadeLabel": "São Paulo",
+    "estado": "SP",
+    "principal": true,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-equipamentos",
+    "servicoLabel": "Transporte de Equipamentos",
+    "cidade": "guarulhos",
+    "cidadeLabel": "Guarulhos",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-equipamentos",
+    "servicoLabel": "Transporte de Equipamentos",
+    "cidade": "osasco",
+    "cidadeLabel": "Osasco",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-equipamentos",
+    "servicoLabel": "Transporte de Equipamentos",
+    "cidade": "santo-andre",
+    "cidadeLabel": "Santo André",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "transporte-equipamentos",
+    "servicoLabel": "Transporte de Equipamentos",
+    "cidade": "sao-bernardo-do-campo",
+    "cidadeLabel": "São Bernardo do Campo",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "materiais-construcao-leves",
+    "servicoLabel": "Materiais de Construção Leves",
+    "cidade": "sao-paulo",
+    "cidadeLabel": "São Paulo",
+    "estado": "SP",
+    "principal": true,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "materiais-construcao-leves",
+    "servicoLabel": "Materiais de Construção Leves",
+    "cidade": "guarulhos",
+    "cidadeLabel": "Guarulhos",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "materiais-construcao-leves",
+    "servicoLabel": "Materiais de Construção Leves",
+    "cidade": "osasco",
+    "cidadeLabel": "Osasco",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "materiais-construcao-leves",
+    "servicoLabel": "Materiais de Construção Leves",
+    "cidade": "santo-andre",
+    "cidadeLabel": "Santo André",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  },
+  {
+    "servico": "materiais-construcao-leves",
+    "servicoLabel": "Materiais de Construção Leves",
+    "cidade": "sao-bernardo-do-campo",
+    "cidadeLabel": "São Bernardo do Campo",
+    "estado": "SP",
+    "principal": false,
+    "servicoPrincipal": false
+  }
+]
