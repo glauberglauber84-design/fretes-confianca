@@ -32,6 +32,7 @@ const props = Astro.props;
       <slot />
     </main>
     <Footer />
+    <aside aria-label="Contato rápido por WhatsApp">
     <a
       href={siteConfig.whatsappUrl}
       class="fixed bottom-4 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg hover:bg-whatsapp-dark focus-light"
@@ -39,5 +40,6 @@ const props = Astro.props;
     >
       <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.3-.5.1-1.1.1-1.8-.1a14 14 0 0 1-5.4-3.4 9.8 9.8 0 0 1-2-3.2c-.4-1-.1-2 .3-2.5.2-.2.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.5c-.1.1-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.9-1.1c.2-.2.4-.2.6-.1l1.9.9c.3.2.5.2.5.4 0 .3 0 .8-.2 1.5Z"/></svg>
     </a>
+    </aside>
   </body>
 </html>

@@ -24,7 +24,7 @@ const faq = [
 const desc = `${label} na Zona Leste de São Paulo, Guarulhos, Osasco, Santo André e São Bernardo. Peça orçamento pelo WhatsApp.`;
 ---
 <BaseLayout
-  title={`${label} na Grande São Paulo | ${siteConfig.name}`.slice(0, 70)}
+  title={`${label} na Grande São Paulo | ${siteConfig.name}`.length <= 60 ? `${label} na Grande São Paulo | ${siteConfig.name}` : `${label} | ${siteConfig.name}`}
   description={desc}
   jsonld={[service(Astro.site!.href, { name: label, path: `/servicos/${servico}/`, areaServed: [...siteConfig.areaServed], description: info.short })]}
 >
