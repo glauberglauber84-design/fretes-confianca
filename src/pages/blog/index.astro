@@ -10,13 +10,13 @@ import { itemList } from '../../lib/schema';
 const description = 'Guias práticos para planejar sua mudança, pedir orçamento de frete e organizar entregas na Grande São Paulo.';
 ---
 <BaseLayout
-  title={`Guias de mudança e frete | ${siteConfig.name}`}
+  title={`Conteúdo: guias de mudança e frete | ${siteConfig.name}`}
   description={description}
   jsonld={[itemList(Astro.site!.href, posts.map((p) => ({ name: p.title, path: `/blog/${p.slug}/` })))]}
 >
-  <Breadcrumb items={[{ name: 'Guias', path: '/blog/' }]} />
+  <Breadcrumb items={[{ name: 'Conteúdo', path: '/blog/' }]} />
   <div class="mx-auto max-w-6xl px-4 pt-6">
-    <h1 class="font-extrabold">Guias de mudança e frete</h1>
+    <h1 class="font-extrabold">Conteúdo</h1>
     <p class="mt-3 max-w-prose text-lg">{description}</p>
   </div>
   <PostsGrid />

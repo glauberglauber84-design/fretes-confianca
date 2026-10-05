@@ -17,7 +17,7 @@ const path = `/blog/${post.slug}/`;
   description={post.summary}
   jsonld={[blogPosting(Astro.site!.href, { title: post.title, description: post.summary, path })]}
 >
-  <Breadcrumb items={[{ name: 'Guias', path: '/blog/' }, { name: post.title, path }]} />
+  <Breadcrumb items={[{ name: 'Conteúdo', path: '/blog/' }, { name: post.title, path }]} />
   <article class="mx-auto max-w-3xl px-4 pt-6">
     <h1 class="font-extrabold">{post.title}</h1>
     <div class="prose-lc">
